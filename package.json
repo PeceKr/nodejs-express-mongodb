@@ -4,8 +4,7 @@
   "description": "App for shoes store",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server --exec babel-node --config .nodemonrc.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server --exec babel-node --config .nodemonrc.json"
   },
   "keywords": [
     "node",
@@ -15,12 +14,15 @@
   "author": "Pece Krstevski",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "config": "^3.2.2",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "helmet": "^3.20.0",
     "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
     "mongodb": "^3.3.0-beta2",
     "mongoose": "^5.6.7",
     "morgan": "^1.9.1"

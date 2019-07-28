@@ -9,15 +9,6 @@ Get started developing...
 ```shell
 #clone 
 git clone https://github.com/PeceKr/nodejs-express-mongodb.git
-
-# install deps
-npm install
-
-# run in development mode
-npm run dev
-
-# run tests
-npm run test
 ```
 
 ## Install Dependencies
@@ -40,4 +31,10 @@ or debug it
 
 ```shell
 npm run dev:debug
+```
+
+## Install mongodb 
+
+```shell
+https://docs.mongodb.com/manual/installation/
 ```
