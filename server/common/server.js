@@ -38,5 +38,6 @@ export default class ExpressServer {
       })
       .then(console.log("Connected to mongodb ..."))
       .catch(err => console.error("Could not connect to mongo db", err));
+      mongoose.set('useFindAndModify', false);
   }
 }
