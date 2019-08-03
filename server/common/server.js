@@ -4,6 +4,7 @@ import * as bodyParser from "body-parser";
 import * as http from "http";
 import * as os from "os";
 import mongoose from "mongoose";
+import error from '../middleware/errors';
 
 export default class ExpressServer {
   constructor(app) {
@@ -18,6 +19,7 @@ export default class ExpressServer {
 
   router(routes) {
     routes(this.app);
+    this.app.use(error);
     return this;
   }
 

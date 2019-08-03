@@ -4,55 +4,36 @@ import constants from "../common/constants";
 
 class BrandsController {
   async add(req, res) {
-    try {
-      // Validate request
-      const { error } = validateBrand(req.body,constants.brandActions.Add);
-      if (error) return res.status(400).send(error.details[0].message);
-      // If the request is good send it to the service
-      const brand = await brandsService.add(req.body);
+    // Validate request
+    const { error } = validateBrand(req.body, constants.brandActions.Add);
+    if (error) return res.status(400).send(error.details[0].message);
+    // If the request is good send it to the service
+    const brand = await brandsService.add(req.body);
 
-      // Return the message and the object
-      return res.status(201).json({ message: "success", brand: { brand } });
-    } catch (error) {
-      res
-        .status(error.status || 500)
-        .send(error.message || "Something went wrong");
-    }
+    // Return the message and the object
+    return res.status(201).json({ message: "success", brand: { brand } });
   }
   async update(req, res) {
-    try {
-      // Validate request
-      const { error } = validateBrand(req.body, constants.brandActions.Update);
-      if (error) return res.status(400).send(error.details[0].message);
+    // Validate request
+    const { error } = validateBrand(req.body, constants.brandActions.Update);
+    if (error) return res.status(400).send(error.details[0].message);
 
-      // If the request is good send it to the service
-      const updatedBrand = await brandsService.update(req.body);
+    // If the request is good send it to the service
+    const updatedBrand = await brandsService.update(req.body);
 
-      // Return the result
-      return res
-        .status(200)
-        .json({ message: "success", updatedBrand: updatedBrand });
-    } catch (error) {
-      res
-        .status(error.status || 500)
-        .send(error.message || "Something went wrong");
-    }
+    // Return the result
+    return res
+      .status(200)
+      .json({ message: "success", updatedBrand: updatedBrand });
   }
   async delete(req, res) {
-    try {
-        // Validate request
-        const { error } = validateBrand(req.body, constants.brandActions.Delete);
-        if (error) return res.status(400).send(error.details[0].message);
+    // Validate request
+    const { error } = validateBrand(req.body, constants.brandActions.Delete);
+    if (error) return res.status(400).send(error.details[0].message);
 
-        await brandsService.delete(req.body.id);
+    await brandsService.delete(req.body.id);
 
-        res.status(200).json({"message " : "Brand has been deleted"});
-  
-    } catch (error) {
-      res
-        .status(error.status || 500)
-        .send(error.message || "Something went wrong");
-    }
+    res.status(200).json({ "message ": "Brand has been deleted" });
   }
 }
 
