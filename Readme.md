@@ -33,7 +33,7 @@ https://docs.mongodb.com/manual/installation/
 
 ## Run It
 #### Run in *development* mode:
-Runs the application is development mode.
+Runs the application in development mode.
 
 ```shell
 npm run dev
