@@ -4,7 +4,10 @@ import * as bodyParser from "body-parser";
 import * as http from "http";
 import * as os from "os";
 import mongoose from "mongoose";
-import error from '../middleware/errors';
+import error from "../middleware/errors";
+import config from "config";
+import winston from "winston";
+import "winston-mongodb";
 
 export default class ExpressServer {
   constructor(app) {
@@ -15,6 +18,8 @@ export default class ExpressServer {
     this.app.use(bodyParser.urlencoded({ extended: true }));
     this.app.use(Express.static(`${root}/public`));
     this.initDatabase();
+    winston.add(new winston.transports.File({ filename: 'logfile.log' }));
+    winston.add(new winston.transports.MongoDB({db:config.get('MongoDB.url')}));
   }
 
   router(routes) {
@@ -34,12 +39,12 @@ export default class ExpressServer {
 
   initDatabase() {
     mongoose
-      .connect("mongodb://localhost/ShoeStoreDB", {
+      .connect(config.get("MongoDB.url"), {
         useCreateIndex: true,
         useNewUrlParser: true
       })
       .then(console.log("Connected to mongodb ..."))
       .catch(err => console.error("Could not connect to mongo db", err));
-      mongoose.set('useFindAndModify', false);
+    mongoose.set("useFindAndModify", false);
   }
 }

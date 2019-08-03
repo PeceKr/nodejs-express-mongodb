@@ -6,6 +6,11 @@ Shoe store is app written in Node.js , using Express framework and MongDb as DBM
 
 Get started developing...
 
+Install node and npm
+```shell
+[a link](https://nodejs.org/en/download/package-manager/)
+```
+
 ```shell
 #clone 
 git clone https://github.com/PeceKr/nodejs-express-mongodb.git
@@ -19,22 +24,17 @@ Install all package dependencies (one time operation)
 npm install
 ```
 
-## Run It
-#### Run in *development* mode:
-Runs the application is development mode. Should not be used in production
-
-```shell
-npm run dev
-```
-
-or debug it
-
-```shell
-npm run dev:debug
-```
-
 ## Install mongodb 
 
 ```shell
-https://docs.mongodb.com/manual/installation/
+[a link](https://docs.mongodb.com/manual/installation/)
 ```
+
+## Run It
+#### Run in *development* mode:
+Runs the application is development mode.
+
+```shell
+npm run dev```
+
+

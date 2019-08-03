@@ -24,7 +24,7 @@ class OrdersDbService {
 
   listOrders() {
     return new Promise((resolve, reject) => {
-      Order.find(SSL_OP_ALL)
+      Order.find()
         .populate("user", "fullName")
         .populate({
           path: "shoe",
