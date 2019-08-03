@@ -32,6 +32,14 @@ class userDbService {
         .catch(err => reject(err));
     });
   }
+
+  findUserById(userId) {
+    return new Promise((resolve, reject) => {
+      User.findById(userId)
+        .then(r => resolve(r))
+        .catch(err => reject(err));
+    });
+  }
 }
 
 export default new userDbService();
