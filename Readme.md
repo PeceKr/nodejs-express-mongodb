@@ -8,9 +8,10 @@ Get started developing...
 
 Install node and npm
 ```shell
-[a link](https://nodejs.org/en/download/package-manager/)
+https://nodejs.org/en/download/package-manager/
 ```
 
+Get the repository 
 ```shell
 #clone 
 git clone https://github.com/PeceKr/nodejs-express-mongodb.git
@@ -27,7 +28,7 @@ npm install
 ## Install mongodb 
 
 ```shell
-[link text itself](https://docs.mongodb.com/manual/installation/)
+https://docs.mongodb.com/manual/installation/
 ```
 
 ## Run It
@@ -35,6 +36,7 @@ npm install
 Runs the application is development mode.
 
 ```shell
-npm run dev```
+npm run dev
+```
 
 
