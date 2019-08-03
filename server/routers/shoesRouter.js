@@ -1,5 +1,5 @@
 import * as express from "express";
 import shoesController from "../controllers/shoesController";
 import {asyncMiddleware}  from "../middleware/async";
-
-export default express.Router().post("/insert", asyncMiddleware(shoesController.insert));
+import auth from '../middleware/auth';
+export default express.Router().post("/insert",auth, asyncMiddleware(shoesController.insert));

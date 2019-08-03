@@ -23,8 +23,7 @@ export default class ExpressServer {
   }
 
   router(routes) {
-    routes(this.app);
-    this.app.use(error);
+    routes(this.app); 
     return this;
   }
 

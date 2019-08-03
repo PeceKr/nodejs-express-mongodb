@@ -27,7 +27,7 @@ npm install
 ## Install mongodb 
 
 ```shell
-[a link](https://docs.mongodb.com/manual/installation/)
+[link text itself](https://docs.mongodb.com/manual/installation/)
 ```
 
 ## Run It
